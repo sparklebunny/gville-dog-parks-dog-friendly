@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Greenville Dog Friendly Shops Map Layer</title>
+  <title>Greenville Dog Friendly Retail Shops Map Layer</title>
   <meta name="description" content="A map of Dog Friendly Shops in Greenville, SC."/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
@@ -34,9 +34,9 @@
         return request.responseText;
       };
 		
-		  var mapURL = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=16195898&single=true&output=csv";
-		
-      var geoJsonData = JSON.parse(readJSON('dogshops_geojson.php?'));
+		  var mapURL = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=630384392&single=true&output=csv";
+		  
+      var geoJsonData = JSON.parse(readJSON('dogfriendlyshops_geojson.php?'));
 
       var mapLayer = MQ.mapLayer(), map;
 

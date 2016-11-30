@@ -1,20 +1,14 @@
 <html>
 <head>
   <title>Greenville Dog Parks Map Layer</title>
-  <meta name="description" content="A map layer for Dog Parks in Greenville, SC. See data.codeforgreenville.org for more."/>
+  <meta name="description" content="A map layer for Dog Parks in Greenville. See data.codeforgreenville.org for more."/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
   <link rel="stylesheet" href="./map.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-<<<<<<< HEAD
-  <!-- My (JeriBeth's) Mapquest key below -->
+   <!--My (JeriBeth's) Mapquest key below -->
   <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=eNrPkATA1gRe2ZiSw85qvOBDroccLjxW"></script>
-  <!-- Provided Mapquest Key below
-  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=bA5WISoAPsk5r0GJ3hHGTkAMFEskFOA2"></script> -->
 
-=======
-  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=bA5WISoAPsk5r0GJ3hHGTkAMFEskFOA2"></script>
->>>>>>> upstream/master
 </head>
 <body>
 	<div id="map">
@@ -42,8 +36,6 @@
 		
 		  var mapURL = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=0&single=true&output=csv";
 		
-		  console.log(readJSON('geojson.php?'));
-
       var geoJsonData = JSON.parse(readJSON('geojson.php?'));
 
       var mapLayer = MQ.mapLayer(), map;
