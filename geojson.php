@@ -6,13 +6,13 @@
 //dog parks
 $googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=0&single=true&output=csv";
 //dog shops and services
-//$googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=16195898&single=true&output=csv";
+// $googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=16195898&single=true&output=csv";
 //dog friendly shops
 //$googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=630384392&single=true&output=csv";
 //dog friendly breweries
 //$googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=421615217&single=true&output=csv";
 
-
+$dogData = $_GET["mapURL"];
 
 $rowCount = 0;
 $features = array();
@@ -59,7 +59,7 @@ if ( !$error && (($handle = fopen($googleSpreadsheetUrl, "r")) !== FALSE) )
     'type' => 'FeatureCollection',
     'features' => $features
   );
-}  // end if , read file handler opened
+}  // end if, read file handler opened
 
 // else, file didn't open for reading
 else
@@ -77,3 +77,4 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 header('Access-Control-Allow-Origin: *');
 
 print $jsonOutput;
+// print $dogData;

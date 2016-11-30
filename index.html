@@ -36,9 +36,41 @@
         return request.responseText;
       };
 		
-      var geoJsonData = JSON.parse(readJSON('geojson.php'));
+		  var mapURL = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=0&single=true&output=csv";
+		
+		  console.log(readJSON('geojson.php?'));
+
+      var geoJsonData = JSON.parse(readJSON('geojson.php?'));
 
       var mapLayer = MQ.mapLayer(), map;
+      
+      function layerFromUrl(url) {
+        var parsedData = JSON.parse(readJSON(url));
+        var newLayer = L.geoJson(parsedData, {
+          onEachFeature: onEachFeature
+        });
+        return newLayer;
+      }
+
+      var dogServicesURL =  "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogservices_geojson.php";
+      var dogServicesLayer = layerFromUrl(dogServicesURL);
+      
+      var dogFriendlyShopsURL = "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogfriendlyshops_geojson.php";
+      var dogFriendlyShopsLayer = layerFromUrl(dogFriendlyShopsURL);
+
+      var dogFriendlyBreweriesURL = "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogfriendlybreweries_geojson.php";
+      var dogBrewLayer =layerFromUrl(dogFriendlyBreweriesURL);
+
+      var overlays = {
+        "Dog Services": dogServicesLayer,
+        "Dog Friendly Shops": dogFriendlyShopsLayer,
+        "Dog Friendly Breweries": dogBrewLayer
+      };
+      
+      // L.tileLayer("DogServices": "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogservices_layers.html").addTo(map);
+      // var dogFriendlyShopsOverlay = L.tileLayer("DogFriendlyShops": "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogfriendlyshops_layers.html");
+      // var dogFriendlyBreweriesOverlay = L.tileLayer("DogFriendlyBreweries": "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogfriendlybreweries_layers.html");
+      
 
       map = L.map('map', {
         layers: mapLayer,
@@ -46,15 +78,18 @@
         zoom: 15
       });
 
-      L.control.layers({
+      var baseMaps = {
         'Map': mapLayer,
         'Hybrid': MQ.hybridLayer(),
         'Satellite': MQ.satelliteLayer(),
         'Dark': MQ.darkLayer(),
-            'Light': MQ.lightLayer()
-      }).addTo(map);
+        'Light': MQ.lightLayer()
+      }
+      
+      L.control.layers(baseMaps, overlays).addTo(map);
 
 //      map.locate({setView: true, maxZoom: 16});
+
 
       L.geoJson(geoJsonData, {
         onEachFeature: onEachFeature
