@@ -1,15 +1,13 @@
 <html>
 <head>
-  <title>Greenville Guest Wi-Fi Map</title>
-  <meta name="description" content="A map of guest wi-fi in Greenville, SC. Buy a sandwich, use the Wi-Fi, support these places."/>
+  <title>Greenville Dog Friendly Shops Map Layer</title>
+  <meta name="description" content="A map of Dog Friendly Shops in Greenville, SC."/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
   <link rel="stylesheet" href="./map.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
   <!-- My (JeriBeth's) Mapquest key below -->
   <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=eNrPkATA1gRe2ZiSw85qvOBDroccLjxW"></script>
-  <!-- Provided Mapquest Key below
-  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=bA5WISoAPsk5r0GJ3hHGTkAMFEskFOA2"></script> -->
 
 </head>
 <body>
@@ -38,8 +36,6 @@
 		
 		  var mapURL = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=16195898&single=true&output=csv";
 		
-		  console.log(readJSON('dogshops_geojson.php?'));
-
       var geoJsonData = JSON.parse(readJSON('dogshops_geojson.php?'));
 
       var mapLayer = MQ.mapLayer(), map;

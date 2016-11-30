@@ -1,4 +1,10 @@
-#Goals for Week 8
+#SC Code Week 8-12 Project Goals
+* Jump to [Week 8](#week8)
+* Jump to [Week 9](#week9)
+* Jump to [Week 10](#week10)
+* Jump to [Week 11-12](#week11)
+
+##<a name="week8">Goals for Week 8</a>
 1. Setup a Cloud9 account using the invite sent via email by Pamela (if it asks for a credit card contact Pamela)
 1. Connect your GitHub account to Cloud9 [via Connected Services](https://c9.io/account/services)
 1. Start thinking about ideas for open/public data you'd like to gather and share with the world.
@@ -23,9 +29,9 @@ Bad Examples: Things like Greenville restaurants, potholes, or vape shops. These
 
 ###Map Data Ideas and Staking Your Claim
 
-Below is intended to seed your brain. If it sparks an idea of your own then add your idea and name to the [open data spreadsheet](https://docs.google.com/spreadsheets/d/1IWsFT1p0ZY-DInfMOFq_gmqpGuKyl5wyBb9VoyoEjRs/edit#gid=30878412)
+Below is intended to seed your brain. If it sparks an idea of your own then add your idea and name to the [open data spreadsheet](https://docs.google.com/spreadsheets/d/1IWsFT1p0ZY-DInfMOFq_gmqpGuKyl5wyBb9VoyoEjRs/edit#gid=0)
 
-If nobody else has claimed a suggested idea then you're welcome to take it by putting your name beside in [the list](https://docs.google.com/spreadsheets/d/1IWsFT1p0ZY-DInfMOFq_gmqpGuKyl5wyBb9VoyoEjRs/edit#gid=30878412)
+If nobody else has claimed a suggested idea then you're welcome to take it by putting your name beside in [the list](https://docs.google.com/spreadsheets/d/1IWsFT1p0ZY-DInfMOFq_gmqpGuKyl5wyBb9VoyoEjRs/edit#gid=0)
 
 * Libraries
 * Historic Sites
@@ -42,7 +48,8 @@ If nobody else has claimed a suggested idea then you're welcome to take it by pu
 * Tree Planting Sites
 * Public (K-12) Schools
 
-#Goals for Week 9
+##<a name="week9">Goals for Week 9</a>
+1. Complete the Week 8 goals above, including the steps from the main [README](https://github.com/codeforgreenville/leaflet-google-sheets-template/blob/master/README.md)
 1. Fork the GitHub Project
 1. Setup a Cloud9 Workspace that talks with your GitHub fork
 1. Do a basic Git command and push to GitHub
@@ -84,3 +91,81 @@ If nobody else has claimed a suggested idea then you're welcome to take it by pu
 1. You'll see a README.md file in the list of files on GitHub. Click it and start reading for more details on how we'll proceed on creating a public spreadsheet and creating a Leaflet map.
 1. Side note: You can ignore messages like "This branch is 1 commit ahead, 1 commit behind codeforgreenville:master." on your GitHub fork page. This means changes were made to the project you forked. You're on your own now and don't need to keep in sync with the fork's origin.
 
+##<a name="week10">Goals for Week 10</a>
+1. Add your GitHub repository, geojson.php URL, and Google Sheet URLs to the [open data list](https://docs.google.com/spreadsheets/d/1IWsFT1p0ZY-DInfMOFq_gmqpGuKyl5wyBb9VoyoEjRs/edit#gid=0)
+1. Git add, commit, and push your changes from Cloud 9 up to GitHub.
+
+### Share Your Work
+Please share your GitHub repository, GeoJSON URL, and Google Spreadsheet in the [open data list](https://docs.google.com/spreadsheets/d/1IWsFT1p0ZY-DInfMOFq_gmqpGuKyl5wyBb9VoyoEjRs/edit#gid=0) in the yellow highlighted boxes.
+
+Through the power of GitHub, we'll publically publish your map and geojson under a directory of https://data.openupstate.org/maps/, which will become the reliable, hosted location for the public.  If/as you modify the project in the future we'd be able to easily pull your changes to https://data.openupstate.org/maps/
+
+### Git Commit and Push
+In week 9 you changed the index.html and geojson.php.  Let's add and commit these chages to version control using Git.
+
+Go to your Cloud 9 workspace and click in the terminal tab at the bottom.
+
+In the terminal, run ``git status`` and Git will tell you about the modified files. These are "Changes not staged for commit".
+
+You can also run ``git diff`` to see a "differential" of what's modified but not yet "staged" . You can use the arrow up/down or page up/down keys to scroll through the diff. There are + and - symbols showing which lines in the code are new or removed.  Press ESC to exit the diff tool.
+
+Run ``git add index.html`` and then ``git add geojson.php`` to stage the files for commiting.
+
+Run ``git status`` again and it will show the files under "Changes to be committed"
+
+Commit the staged changes using ``git commit -m 'Customized Leaflet and PHP GeoJSON files to pull from my own Google Spreadsheet and get the map working'``
+
+Now let your GitHub repo know about your commit by running ``git push origin master`` or the shortcut ``git push``
+The repo on GitHub is configured as your git remote "origin" and you only have a single "master" branch, hence pushing to origin master sends changes from your master branch up to GitHub.
+
+##<a name="week11">Goals for Week 11-12</a>
+1. Add a Git upstream, merge in changes from the upstream, resolve a simple merge conflict
+1. (Optional) Choose your adventure if you want to flex your coding skills on more advanced mapping concepts.
+
+###Git Upstream, Merge, Conflict Resolution
+When you fork a GitHub repository it's often, but not always, that you want to merge changes from original project back into your copy. In this case the original repo is called the "upstream".
+
+As a simple example, the README.md and SC-CODES-README.md have been changed in the upstream since you forked. Let's merge in the changes.
+
+Right now you have a single master branch and a link to the remote origin master (on GitHub). You can see this by listing all the branches Git knows about. 
+
+In the terminal, run ``git branch -a``
+
+We're going to tell Git where to find the ["remote upstream"](https://help.github.com/articles/configuring-a-remote-for-a-fork/) pointing at our [original template project](https://github.com/codeforgreenville/leaflet-google-sheets-template) by running ``git remote add upstream https://github.com/codeforgreenville/leaflet-google-sheets-template.git``
+
+Run ``git branch -a`` again and you'll see a new branch "remotes/upstream/master"
+
+We want to grab a copy of the [remote upstream](https://help.github.com/articles/syncing-a-fork/).
+
+``git fetch upsteam``
+
+This fetched the latest upstream code into a branch within your Cloud 9 environment. Note, you won't see anything change within Cloud 9, but your local Git has a copy of the upstream master branch at your disposal.
+
+Now merge the upstream code into your code.
+``git merge upstream/master``
+
+You'll see a message like "CONFLICT (modify/delete): SC-CODES-README.md deleted in HEAD and modified in upstream/master. Version upstream/master of SC-CODES-README.md left in tree. Automatic merge failed; fix conflicts and then commit the result."
+
+Run ``git status`` to see more information. It will show a ["merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/).  On the one hand, you deleted (in week 9) the SC-CODES-README.md file while the upstream still has a copy which was also edited since you forked it.
+
+Let's tell Git that we still don't care need a copy of SC-CODES-README.md in our fork by removing the merged in changes ``git rm SC-CODES-README.md``
+
+You'll also see that the upstream changed the README.md.  You can compare what changed between your fork and the upstream README.md by running ``git diff README.md``
+
+We want to keep these merged README.md changes, so tell git to add them ``git add README.md``
+
+Instruct git to commit these changes
+``git commit -m 'Merge in the README.md from the remote upstream'``
+
+Push the commit up to the GitHub remote copy
+``git push origin master``
+
+Congratulations, you've done your first "merge" and resolved a "merge conflict".
+
+Side note, knowing how to use a remote upstream is one of the steps for creating a ["pull request"](https://help.github.com/articles/creating-a-pull-request/). A pull request is how GitHub allows you to propose a merge into someone's GitHub repository. For instance, if you wanted to contribute a fix to an open-source project that hosts its code on GitHub.
+
+Here are sample ideas. Be aware of cross-origin issues if you're trying to load GeoJSON across domains using javascript.
+
+1. Create a new layers.html file in your C9 workspace and add another student's geojson.php as a second Leaflet layer
+1. Build an equivalent [Google Map by loading your geojson.php as a layer](https://developers.google.com/maps/documentation/javascript/datalayer#load_geojson) by creating a googlemap.html in Cloud9. 
+1. Test out other [Leaflet functions](http://leafletjs.com/reference-1.0.2.html)

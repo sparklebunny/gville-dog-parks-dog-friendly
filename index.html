@@ -1,16 +1,20 @@
 <html>
 <head>
-  <title>Greenville Guest Wi-Fi Map</title>
-  <meta name="description" content="A map of guest wi-fi in Greenville, SC. Buy a sandwich, use the Wi-Fi, support these places."/>
+  <title>Greenville Dog Parks Map Layer</title>
+  <meta name="description" content="A map layer for Dog Parks in Greenville, SC. See data.codeforgreenville.org for more."/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
   <link rel="stylesheet" href="./map.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+<<<<<<< HEAD
   <!-- My (JeriBeth's) Mapquest key below -->
   <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=eNrPkATA1gRe2ZiSw85qvOBDroccLjxW"></script>
   <!-- Provided Mapquest Key below
   <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=bA5WISoAPsk5r0GJ3hHGTkAMFEskFOA2"></script> -->
 
+=======
+  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=bA5WISoAPsk5r0GJ3hHGTkAMFEskFOA2"></script>
+>>>>>>> upstream/master
 </head>
 <body>
 	<div id="map">
@@ -66,12 +70,7 @@
         "Dog Friendly Shops": dogFriendlyShopsLayer,
         "Dog Friendly Breweries": dogBrewLayer
       };
-      
-      // L.tileLayer("DogServices": "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogservices_layers.html").addTo(map);
-      // var dogFriendlyShopsOverlay = L.tileLayer("DogFriendlyShops": "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogfriendlyshops_layers.html");
-      // var dogFriendlyBreweriesOverlay = L.tileLayer("DogFriendlyBreweries": "https://gville-dog-parks-dog-friendly-jeribeth.c9users.io/dogfriendlybreweries_layers.html");
-      
-
+    
       map = L.map('map', {
         layers: mapLayer,
         center: [ 34.8507212,-82.3985128 ],

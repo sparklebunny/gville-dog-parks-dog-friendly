@@ -1,18 +1,8 @@
 <?php
 // kudos to http://stackoverflow.com/a/18106727/1778785 for snippet of PHP to read Google spreadsheet as CSV
-//all tabs in dog spreadsheet
-//$googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?output=csv";
 
-//dog parks
-// $googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=0&single=true&output=csv";
-//dog shops and services
-// $googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=16195898&single=true&output=csv";
-//dog friendly shops
-//$googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=630384392&single=true&output=csv";
 //dog friendly breweries
 $googleSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/1autJJNR6y4HcZfIiFEqtfOTS2T6pIozExLZ6wgyNnUQ/pub?gid=421615217&single=true&output=csv";
-
-$dogData = $_GET["mapURL"];
 
 $rowCount = 0;
 $features = array();
